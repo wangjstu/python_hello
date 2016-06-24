@@ -4,12 +4,17 @@
 ########## prepare ##########
 
 # install mysql-connector-python:
-# pip3 install mysql-connector-python --allow-external mysql-connector-python
+# pip3 install mysql-connector-python-rf --allow-external mysql-connector-python #基本不成功
+#下面的才有用
+# wget https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.1.3.zip
+# unzip mysql-connector-python-2.1.3.zip
+# cd mysql-connector-python-2.1.3
+# python setup.py install
 
 import mysql.connector
 
 # change root password to yours:
-conn = mysql.connector.connect(user='root', password='password', database='test')
+conn = mysql.connector.connect(user='root', password='vagrant', database='test')
 
 cursor = conn.cursor()
 # 创建user表:
